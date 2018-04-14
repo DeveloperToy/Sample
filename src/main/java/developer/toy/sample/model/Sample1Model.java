@@ -7,7 +7,8 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class Sample1Model {
+public class Sample1Model
+{
 	private String value1;
 	private String value2;
 }
