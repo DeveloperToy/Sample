@@ -14,13 +14,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import developer.toy.sample.controller.validate.SampleValidator;
-import developer.toy.sample.model.ValidateSampleModel;
+import developer.toy.sample.model.ValidatorSampleModel;
 
 @RestController
-public class ValidateRestController
+public class ValidatorRestController
 {
 
-	private static final org.slf4j.Logger logger = LoggerFactory.getLogger( ValidateRestController.class );
+	private static final org.slf4j.Logger logger = LoggerFactory.getLogger( ValidatorRestController.class );
 
 	// @Autowired
 	// private ValidateSampleModel validateSampleModel;
@@ -35,7 +35,7 @@ public class ValidateRestController
 	}
 
 	@RequestMapping("/validateSample1")
-	public String doSample1( ValidateSampleModel req )
+	public String doSample1( ValidatorSampleModel req )
 	{
 
 		logger.info( "validateSample1 開始" );
@@ -57,8 +57,8 @@ public class ValidateRestController
 	}
 
 	@RequestMapping(value = "/validateSample3", method = RequestMethod.POST, headers = "Accept=application/json", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-	public ValidateSampleModel doSample3( @RequestParam("token") String token,
-			@Validated @RequestBody ValidateSampleModel req )
+	public ValidatorSampleModel doSample3( @RequestParam("token") String token,
+			@Validated @RequestBody ValidatorSampleModel req )
 	{
 		logger.info( "validateSample3 開始" );
 

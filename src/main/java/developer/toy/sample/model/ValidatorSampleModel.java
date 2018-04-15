@@ -7,7 +7,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class ValidateSampleModel
+public class ValidatorSampleModel
 {
 	private String value1;
 	private String value2;

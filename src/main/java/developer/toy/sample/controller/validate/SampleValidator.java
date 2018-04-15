@@ -9,9 +9,9 @@ import org.springframework.validation.Validator;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import developer.toy.sample.controller.ValidateRestController;
+import developer.toy.sample.controller.ValidatorRestController;
 import developer.toy.sample.model.Sample1Model;
-import developer.toy.sample.model.ValidateSampleModel;
+import developer.toy.sample.model.ValidatorSampleModel;
 
 @Component
 public class SampleValidator implements Validator
@@ -27,14 +27,14 @@ public class SampleValidator implements Validator
 	public boolean supports( Class< ? > clazz )
 	{
 		// TODO 自動生成されたメソッド・スタブ
-		return ValidateSampleModel.class.isAssignableFrom( clazz );
+		return ValidatorSampleModel.class.isAssignableFrom( clazz );
 	}
 
 	@Override
 	public void validate( Object target, Errors errors )
 	{
 		logger.debug( "[debug]バリデータ　開始" );
-		ValidateSampleModel vsm = ( ValidateSampleModel ) target;
+		ValidatorSampleModel vsm = ( ValidatorSampleModel ) target;
 
 		valu1Validate( vsm, errors );
 		// errors.rejectValue("message",
@@ -43,7 +43,7 @@ public class SampleValidator implements Validator
 
 	}
 
-	private void valu1Validate( ValidateSampleModel target, Errors errors )
+	private void valu1Validate( ValidatorSampleModel target, Errors errors )
 	{
 		if ("1".equals( target.getValue1() )) {
 			if (StringUtils.isEmpty( target.getValue2() )) {
